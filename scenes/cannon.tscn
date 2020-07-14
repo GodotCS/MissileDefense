@@ -10,7 +10,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="cannonBarrel" type="Sprite" parent="."]
-position = Vector2( -5.44995, -66.5032 )
+position = Vector2( -4.55194, -35.9722 )
 texture = ExtResource( 2 )
 offset = Vector2( 73.8162, 2.34729 )
 script = ExtResource( 3 )

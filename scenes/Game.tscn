@@ -44,11 +44,11 @@
 size = 44
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 90
 font_data = ExtResource( 6 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 522.354, 73.0885 )
 
 [node name="game" type="Node2D"]
@@ -71,6 +71,8 @@ tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65537, 0, 0 )
 
 [node name="bulletBrain" type="Node" parent="bullets"]
 script = ExtResource( 4 )
+playerBulletSpeed = 500
+enemyBulletSpeed = 350
 
 [node name="enemySpawner" type="Timer" parent="bullets/bulletBrain"]
 wait_time = 3.0
@@ -107,7 +109,7 @@ margin_left = 4.53052
 margin_top = 126.857
 margin_right = 1024.53
 margin_bottom = 300.857
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "GAME OVER"
 align = 1
 __meta__ = {
@@ -116,11 +118,12 @@ __meta__ = {
 
 [node name="player" type="Node" parent="."]
 script = ExtResource( 5 )
+health = 5
 
 [node name="playerHitZone" type="Area2D" parent="player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/playerHitZone"]
 position = Vector2( 506.999, 547.781 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 [connection signal="timeout" from="bullets/bulletBrain/enemySpawner" to="bullets/bulletBrain" method="_on_enemySpawner_timeout"]
 [connection signal="area_entered" from="player/playerHitZone" to="player" method="_on_playerHitZone_area_entered"]
