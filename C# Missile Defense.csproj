@@ -58,6 +58,7 @@
     <Compile Include="scripts\bulletStopper.cs" />
     <Compile Include="scripts\cannonBarrel.cs" />
     <Compile Include="scripts\explosion.cs" />
+    <Compile Include="scripts\player.cs" />
     <Compile Include="scripts\scenes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
