@@ -57,3 +57,5 @@ tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65537, 0, 0 )
 [node name="explosion" parent="." instance=ExtResource( 5 )]
 
 [node name="bullet" parent="." instance=ExtResource( 4 )]
+position = Vector2( -0.0678711, 0 )
+rotation = 1.5708
