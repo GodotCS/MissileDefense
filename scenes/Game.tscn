@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/tileMapGround.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileMapStars.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/bulletBrain.cs" type="Script" id=4]
 [ext_resource path="res://scripts/player.cs" type="Script" id=5]
 [ext_resource path="res://assets/kenvector_future.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/gameOverOverlay.png" type="Texture" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileMapStars.png 0"
@@ -41,6 +42,10 @@
 
 [sub_resource type="DynamicFont" id=3]
 size = 44
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 90
 font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -85,6 +90,26 @@ custom_fonts/font = SubResource( 3 )
 text = "Hello World!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gameOverScreen" type="Node2D" parent="hud"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="hud/gameOverScreen"]
+position = Vector2( 509.872, 289.319 )
+scale = Vector2( 9.13379, 5.24249 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="hud/gameOverScreen"]
+margin_left = 4.53052
+margin_top = 126.857
+margin_right = 1024.53
+margin_bottom = 300.857
+custom_fonts/font = SubResource( 5 )
+text = "GAME OVER"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
