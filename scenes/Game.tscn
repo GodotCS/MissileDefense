@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tileMapGround.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileMapStars.png" type="Texture" id=2]
 [ext_resource path="res://scenes/cannon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/bulletBrain.cs" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileMapStars.png 0"
@@ -53,6 +54,9 @@ format = 1
 tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65537, 0, 0 )
 
 [node name="bullets" type="Node" parent="."]
+
+[node name="bulletBrain" type="Node" parent="bullets"]
+script = ExtResource( 4 )
 
 [node name="foreground" type="Node" parent="."]
 
