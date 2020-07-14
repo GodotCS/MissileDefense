@@ -78,6 +78,10 @@ enemyBulletSpeed = 350
 wait_time = 3.0
 autostart = true
 
+[node name="cloudSpawner" type="Timer" parent="bullets/bulletBrain"]
+wait_time = 2.0
+autostart = true
+
 [node name="foreground" type="Node" parent="."]
 
 [node name="cannon" parent="foreground" instance=ExtResource( 3 )]
@@ -126,4 +130,5 @@ health = 5
 position = Vector2( 506.999, 547.781 )
 shape = SubResource( 5 )
 [connection signal="timeout" from="bullets/bulletBrain/enemySpawner" to="bullets/bulletBrain" method="_on_enemySpawner_timeout"]
+[connection signal="timeout" from="bullets/bulletBrain/cloudSpawner" to="bullets/bulletBrain" method="_on_cloudSpawner_timeout"]
 [connection signal="area_entered" from="player/playerHitZone" to="player" method="_on_playerHitZone_area_entered"]

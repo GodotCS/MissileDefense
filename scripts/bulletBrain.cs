@@ -32,6 +32,11 @@ public class bulletBrain : Node
         spawnEnemy();
     }
 
+    public void _on_cloudSpawner_timeout()
+    {
+        spawnCloud();
+    }
+
     public void spawnEnemy()
     {
         Vector2 spawnPosition = new Vector2(Convert.ToSingle(GD.RandRange(0,1000)),-30);
@@ -72,6 +77,19 @@ public class bulletBrain : Node
         var explosionSprite = (AnimatedSprite)explosion.GetNode("AnimatedSprite");
         explosionSprite.Play(animationName);
 
+    }
+
+    public void spawnCloud()
+    {
+        var cloud = (AnimatedSprite)scenes._sceneCloud.Instance();
+        GetNode("/root/game/foreground").AddChild(cloud);
+
+        cloud.Frame = Convert.ToInt32(Math.Floor(GD.RandRange(0,3)));
+        
+        Vector2 spawnPosition = new Vector2(-100,Convert.ToSingle(GD.RandRange(0,400)));
+        cloud.GlobalPosition = spawnPosition;
+        var randomScale = Convert.ToSingle(GD.RandRange(0,1));
+        cloud.Scale = new Vector2(randomScale,randomScale);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
