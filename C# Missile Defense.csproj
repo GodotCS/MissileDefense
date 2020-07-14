@@ -53,8 +53,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bullet.cs" />
-    <Compile Include="cannonBarrel.cs" />
+    <Compile Include="scripts\bullet.cs" />
+    <Compile Include="scripts\cannonBarrel.cs" />
+    <Compile Include="scripts\scenes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
