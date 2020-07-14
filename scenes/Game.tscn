@@ -58,9 +58,14 @@ tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65537, 0, 0 )
 [node name="bulletBrain" type="Node" parent="bullets"]
 script = ExtResource( 4 )
 
+[node name="enemySpawner" type="Timer" parent="bullets/bulletBrain"]
+wait_time = 3.0
+autostart = true
+
 [node name="foreground" type="Node" parent="."]
 
 [node name="cannon" parent="foreground" instance=ExtResource( 3 )]
-position = Vector2( 506.755, 458.617 )
+position = Vector2( 489.974, 467.007 )
 
 [node name="hud" type="Node" parent="."]
+[connection signal="timeout" from="bullets/bulletBrain/enemySpawner" to="bullets/bulletBrain" method="_on_enemySpawner_timeout"]

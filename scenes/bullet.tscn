@@ -5,18 +5,18 @@
 [ext_resource path="res://scripts/bullet.cs" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 75.2623, 29.8125 )
+extents = Vector2( 36.1635, 18.9169 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "enemy",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "player",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "enemy",
 "speed": 5.0
 } ]
 
@@ -27,5 +27,6 @@ script = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "enemy"
