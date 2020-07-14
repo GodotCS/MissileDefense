@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/bulletStopper.cs" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.2774
+radius = 33.172
 
 [node name="bulletStopper" type="Area2D"]
 script = ExtResource( 2 )

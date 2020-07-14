@@ -24,7 +24,7 @@ public class cannonBarrel : Sprite
     {
         bulletBrain.spawnBullet(GlobalPosition, GetGlobalMousePosition(), "player");
 
-        var bulletStopper =  (Area2D)scenes._sceneBulletStopper.Instance();
+        var bulletStopper = (Area2D)scenes._sceneBulletStopper.Instance();
         GetNode("/root/game/bullets").AddChild(bulletStopper);
         bulletStopper.GlobalPosition = GetGlobalMousePosition();
     }
